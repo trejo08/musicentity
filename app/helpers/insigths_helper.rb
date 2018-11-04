@@ -1,0 +1,2 @@
+module InsigthsHelper
+end

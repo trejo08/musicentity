@@ -1,0 +1,2 @@
+class InsigthsController < ApplicationController
+end
