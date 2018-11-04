@@ -69,4 +69,7 @@ gem 'rubocop-rails_config', groups: [:development, :test]
 gem 'faker'
 
 gem 'twitter'
+gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
+gem 'responders'
+gem 'rest-client'
