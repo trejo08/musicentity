@@ -25,3 +25,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Dev configuration files
+.env
+.editorconfig
+.ruby-gemset
+.ruby-version
+.rubocop.yml
+.pryrc
