@@ -75,3 +75,5 @@ gem 'responders'
 gem 'rest-client'
 
 gem 'devise'
+gem 'bootstrap-generators', '~> 3.3.4'
+gem 'faker'
