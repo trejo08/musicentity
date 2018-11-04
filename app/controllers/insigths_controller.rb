@@ -1,26 +1,23 @@
 class InsigthsController < ApplicationController
+  protect_from_forgery except: :recommends
   helper_method :users
   respond_to :html, :js
 
-  def index
-  end
-
-  def get_user_personality
+  def recommends
     user = User.find(params[:id])
-
-    @personality = V1::PersonalityInsigth.call(params[:user_name])
-
+    @personality = V1::PersonalityInsigth.call(user.username)
     unless user.personality.present?
-      user.personality = update_personality
+      user.personality = user_personality
       user.save
     end
 
-    @preferences = V1::RecommendMusic.call(user.tag)
+    @recommends = V1::RecommendMusic.call(user.genres)
+    render 'recommends.js'
   end
 
-  def update_personality
+  def user_personality
     {}.tap do |personality|
-      @my_personality['personality'].each do |trait, value|
+      @personality['personality'].each do |trait, value|
         personality[trait['name']] = trait['percentile']
       end
     end
@@ -30,5 +27,4 @@ class InsigthsController < ApplicationController
     def users
       @users ||= User.order(created_at: :asc)
     end
-
 end

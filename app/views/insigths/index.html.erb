@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-3" >
+    </br>
+    </br>
+    </br>
+    </br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.each do |user| %>
+        <tr>
+          <th scope="row"><%= user.id %></th>
+          <td><%= link_to user.username, recommends_path(user), method: :post, remote: true %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-8" >
+    </br>
+    </br>
+    </br>
+    </br>
+    <h1>Music Recommends</h1>
+    <div class="music_recommends"">Select a user to show information</div>
+  </div>
+</div>

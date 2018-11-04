@@ -1,0 +1,1 @@
+$('.music_recommends').empty().append("<%= escape_javascript(render(partial: 'recommends', locals: { personality: @personality, recommends: @recommends })) %>")

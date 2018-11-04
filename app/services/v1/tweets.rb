@@ -2,7 +2,7 @@ module V1
   class Tweets
     include ServiceConcern
 
-    def initialize username, limit = 60
+    def initialize(username, limit = 100)
       @username = username
       @limit = limit
     end
@@ -12,11 +12,8 @@ module V1
     end
 
     private
-
-    # Get tweets per user and convert to uniq string
-    def get_tweets
-      CLIENT.user_timeline(@username, count: @limit).map(&:full_text).to_sentence
-    end
-
+      def get_tweets
+        CLIENT.user_timeline(@username, count: @limit).map(&:full_text).to_sentence
+      end
   end
 end

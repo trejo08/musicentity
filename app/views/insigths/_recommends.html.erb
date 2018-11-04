@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class= "card" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-title">Personality</h5>
+        <% personality['personality'].each do |trait| %>
+          <%#= trait.inspect%>
+          <p class="card-text">
+            <strong>Trait Name:</strong> <%= trait['name'] %>
+          </p>
+          <p class="card-text">
+            <strong>Percentile:</strong> <%= number_to_percentage(trait['percentile'], precision: 2) %>
+          </p>
+          <hr/>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class= "col-md-8">
+    <div class= "card">
+      <% @recommends['albums']['album'].each do |album| %>
+        <img class="card-img-top img-album" src="<%= album['image'].second['#text'] %>" alt="<%= album['name'] %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= album['name'] %></h5>
+          <p class="card-text"><strong>Artist:</strong> <%= album['artist']['name'] %></p>
+          <a href="<%= album['url'] %>" class="btn btn-primary">Go to Artist</a>
+        </div>
+        <hr/>
+      <% end %>
+    </div>
+  </div>
+</div>

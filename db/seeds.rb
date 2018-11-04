@@ -7,5 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
-  email: 'trejocola'
+  username: 'trejo4522'
+)
+
+User.create(
+  username: 'spotify'
+)
+
+User.create(
+  username: 'netflix'
+)
+
+User.create(
+  username: 'instagram'
+)
+
+User.create(
+  username: 'facebook'
 )

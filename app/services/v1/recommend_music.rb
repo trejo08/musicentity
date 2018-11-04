@@ -2,7 +2,7 @@ module V1
   class RecommendMusic
     include ServiceConcern
 
-    def initialize tag
+    def initialize(tag)
       @tag = tag
     end
 
